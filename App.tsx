@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ICONS } from './constants';
-import { chatWithChef, analyzeFoodImage } from './geminiService';
-import { FeatureCard, PricingPlan, NavItem, Message } from './types';
+import { ICONS } from './constants.tsx';
+import { chatWithChef, analyzeFoodImage } from './geminiService.ts';
+import { FeatureCard, PricingPlan, NavItem, Message } from './types.ts';
 
 // --- Intersection Observer Component ---
 const RevealOnScroll: React.FC<{ children: React.ReactNode; delay?: string }> = ({ children, delay = "0s" }) => {
