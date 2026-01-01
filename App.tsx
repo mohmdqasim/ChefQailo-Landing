@@ -373,49 +373,48 @@ const WeeklyMenuPreview: React.FC = () => {
 const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void }> = ({ isDark, toggleDark }) => {
   const navItems: NavItem[] = [
     { label: 'Features', href: '#features' },
-    { label: 'Evolution', href: '#why-choose' },
     { label: 'How it Works', href: '#how-it-works' },
     { label: 'Inventory', href: '#inventory' },
-    { label: 'Insights', href: '#insights' },
     { label: 'Pricing', href: '#pricing' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass px-6 py-4 animate-fade-in">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-2 cursor-pointer group">
-          <div className="bg-primary p-2 rounded-lg text-white group-hover:rotate-12 transition-transform shadow-lg shadow-primary/20">
-            <ICONS.ChefHat />
-          </div>
-          <span className="text-xl font-display font-bold text-primary tracking-tight">Chef Qailo</span>
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl glass rounded-[2rem] px-8 py-4 shadow-xl border border-white/20 dark:border-white/5 animate-fade-in flex items-center justify-between">
+      <div className="flex items-center gap-3 cursor-pointer group">
+        <div className="bg-primary p-2.5 rounded-xl text-white group-hover:rotate-12 transition-transform shadow-lg shadow-primary/30">
+          <ICONS.ChefHat />
         </div>
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item, idx) => (
-            <a 
-              key={item.label} 
-              href={item.href} 
-              className="text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
-            >
-              {item.label}
-            </a>
-          ))}
-          
-          <button 
-            onClick={toggleDark}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
-            aria-label="Toggle Dark Mode"
-          >
-            {isDark ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            )}
-          </button>
+        <span className="text-2xl font-display font-bold text-primary tracking-tight">Qailo</span>
+      </div>
 
-          <button className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all shadow-lg shadow-primary/30 active:scale-95">
-            Download App
-          </button>
-        </div>
+      <div className="hidden md:flex items-center gap-10">
+        {navItems.map((item) => (
+          <a 
+            key={item.label} 
+            href={item.href} 
+            className="text-sm font-bold text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full tracking-tight"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <div className="flex items-center gap-4">
+        <button 
+          onClick={toggleDark}
+          className="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400"
+          aria-label="Toggle Dark Mode"
+        >
+          {isDark ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          )}
+        </button>
+
+        <button className="bg-primary text-white px-8 py-3.5 rounded-2xl text-sm font-bold hover:bg-opacity-95 transition-all shadow-lg shadow-primary/30 active:scale-95">
+          Get App
+        </button>
       </div>
     </nav>
   );
@@ -423,7 +422,7 @@ const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void }> = ({ isDark,
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-40 pb-24 px-6 overflow-hidden">
+    <section className="relative pt-52 pb-24 px-6 overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 dark:bg-primary/10 -skew-x-12 translate-x-1/4 -z-10"></div>
       <div className="absolute top-1/4 left-10 w-4 h-4 rounded-full bg-primary/20 animate-pulse"></div>
       <div className="absolute bottom-1/4 right-20 w-8 h-8 rounded-full bg-primary/10 animate-float"></div>
@@ -814,15 +813,6 @@ const MeetChefSection: React.FC = () => {
             <RevealOnScroll delay="0.2s">
                <div className="relative">
                  <div className="relative z-10 flex flex-col gap-8">
-                    <div className="relative group max-w-md mx-auto">
-                      <div className="relative aspect-square rounded-[4rem] overflow-hidden border-8 border-white dark:border-dark-card shadow-2xl bg-gray-900">
-                        <img 
-                          src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=800" 
-                          alt="Chef Qailo 3D" 
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                        />
-                      </div>
-                    </div>
                     <ChefChat />
                  </div>
                </div>
@@ -1075,73 +1065,76 @@ const FAQSection: React.FC = () => {
 
 const Pricing: React.FC = () => {
   const plans: PricingPlan[] = [
-    { name: 'Free', price: '$0', features: ['AI Chat Access', '10 Saved Recipes', 'Basic Shopping List'] },
-    { name: 'Basic', price: '$9', features: ['Unlimited Recipes', 'Smart Inventory', 'Calorie Tracking', 'Ad-Free'] },
-    { name: 'Pro', price: '$19', features: ['Visual Feedback (10/mo)', 'Family Sharing', 'Smart Home Sync', 'Priority Support'], isPopular: true },
-    { name: 'Premium', price: '$49', features: ['Unlimited Visual Feedback', '1-on-1 Sommelier Chat', 'Priority Support', 'Video Masterclasses'] },
+    { name: 'Casual', price: '$0', features: ['AI Chat Advice', '15 Saved Recipes', 'Basic Inventory Sync', 'Standard AI Response'] },
+    { name: 'Enthusiast', price: '$12', features: ['Unlimited Recipes', 'Full Pantry Map', 'Ad-Free Experience', 'Personalized Macros', 'Recipe Scaling'] },
+    { name: 'Master', price: '$24', features: ['Real-time Voice Guidance', '10 Food Photo Analyses/mo', 'Family Kitchen Sync', 'Smart Home Integration', 'Priority AI Engine'], isPopular: true },
+    { name: 'Professional', price: '$59', features: ['Unlimited Visual Analysis', 'Bespoke Sommelier AI', 'Direct Masterclass Stream', 'Custom Nutrition Reports', 'Pro-level Tool Integration'] },
   ];
 
   return (
-    <section id="pricing" className="py-32 px-6 bg-cream dark:bg-dark-bg/50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2"></div>
-      
+    <section id="pricing" className="py-40 px-6 bg-cream dark:bg-dark-bg relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-primary/5 rounded-full blur-[150px] -rotate-12 pointer-events-none"></div>
+
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-32">
           <RevealOnScroll>
-            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20 mb-6">
-              Membership Plans
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20 mb-8">
+              Membership
             </div>
-            <h2 className="text-4xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white leading-[1.1]">
-              Elevate Your <span className="text-primary italic">Kitchen Journey</span>
+            <h2 className="text-5xl lg:text-7xl font-display font-bold text-gray-900 dark:text-white leading-[1.1]">
+              Elevate Your <br />
+              <span className="text-primary italic">Kitchen Journey</span>
             </h2>
-            <p className="text-xl text-gray-500 dark:text-gray-400 mt-6 font-medium leading-relaxed">
-              Choose the tier that matches your culinary ambition. Unlock specialized AI features and personalized guidance.
+            <p className="text-xl text-gray-500 dark:text-gray-400 mt-8 font-medium leading-relaxed">
+              Unlock the full potential of your kitchen with tiered intelligence tailored to your culinary ambition.
             </p>
           </RevealOnScroll>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8">
           {plans.map((plan, idx) => (
             <RevealOnScroll key={plan.name} delay={`${idx * 0.1}s`}>
-              <div className={`group h-full relative p-10 rounded-[3.5rem] bg-white dark:bg-dark-card transition-all duration-500 flex flex-col border-2 shadow-sm ${
+              <div className={`group h-full relative p-12 rounded-[4rem] transition-all duration-700 flex flex-col ${
                 plan.isPopular 
-                ? 'border-primary shadow-[0_40px_80px_-20px_rgba(211,96,10,0.15)] scale-[1.05] z-10' 
-                : 'border-transparent dark:border-white/5 hover:border-gray-200 dark:hover:border-white/10 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)]'
+                ? 'bg-white dark:bg-dark-card border-2 border-primary shadow-[0_40px_100px_-20px_rgba(211,96,10,0.15)] scale-[1.05] z-10' 
+                : 'bg-white/50 dark:bg-dark-card/50 backdrop-blur-sm border border-gray-100 dark:border-white/5 hover:bg-white dark:hover:bg-dark-card hover:scale-[1.02] hover:shadow-2xl'
               }`}>
                 
                 {plan.isPopular && (
-                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-6 py-2 rounded-full shadow-lg group-hover:scale-110 transition-transform">
-                    Recommended
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-8 py-2.5 rounded-full shadow-lg flex items-center gap-2 group-hover:scale-110 transition-transform">
+                    <ICONS.Zap /> Chef's Recommendation
                   </div>
                 )}
 
-                <div className="mb-10 text-center">
-                  <h4 className="text-sm font-bold text-gray-400 dark:text-white/40 uppercase tracking-widest mb-4 group-hover:text-primary transition-colors">
+                <div className="mb-12">
+                  <h4 className={`text-sm font-display font-bold uppercase tracking-[0.2em] mb-6 transition-colors duration-500 ${plan.isPopular ? 'text-primary' : 'text-gray-400 dark:text-white/20'}`}>
                     {plan.name}
                   </h4>
-                  <div className="flex items-center justify-center gap-1">
+                  <div className="flex items-baseline gap-1">
                     <span className="text-5xl font-display font-bold text-gray-900 dark:text-white">{plan.price}</span>
-                    <span className="text-gray-400 dark:text-white/30 font-medium self-end pb-1">/mo</span>
+                    <span className="text-gray-400 dark:text-white/30 font-medium text-sm">/mo</span>
                   </div>
                 </div>
 
-                <div className="space-y-5 mb-12 flex-1">
+                <div className="space-y-6 mb-16 flex-1">
                   {plan.features.map((feat) => (
-                    <div key={feat} className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 font-medium group-hover:translate-x-1 transition-transform">
-                      <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${plan.isPopular ? 'bg-primary text-white' : 'bg-primary/10 text-primary'}`}>
+                    <div key={feat} className="flex items-start gap-4 text-sm text-gray-600 dark:text-gray-300 font-medium group-hover:translate-x-2 transition-transform duration-500">
+                      <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5 ${plan.isPopular ? 'bg-primary text-white' : 'bg-primary/10 text-primary'}`}>
                         <ICONS.Check />
                       </div>
-                      {feat}
+                      <span className="leading-relaxed">{feat}</span>
                     </div>
                   ))}
                 </div>
 
-                <button className={`w-full py-5 rounded-[2rem] font-bold transition-all active:scale-95 text-base ${
+                <button className={`w-full py-6 rounded-[2.5rem] font-bold transition-all duration-500 active:scale-95 text-base flex items-center justify-center gap-2 group/btn ${
                   plan.isPopular 
-                  ? 'bg-primary text-white hover:bg-opacity-95 shadow-xl shadow-primary/20' 
-                  : 'bg-gray-50 dark:bg-white/5 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 border border-gray-100 dark:border-white/10'
+                  ? 'bg-primary text-white hover:bg-opacity-95 shadow-xl shadow-primary/30' 
+                  : 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:scale-[1.05]'
                 }`}>
-                  Get Started
+                  Select {plan.name}
+                  <svg className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </button>
               </div>
             </RevealOnScroll>
