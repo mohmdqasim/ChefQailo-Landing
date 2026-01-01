@@ -1,0 +1,7 @@
+{
+  "name": "Chef Qailo - AI Kitchen Companion",
+  "description": "A premium landing page for an AI-powered personal chef and smart kitchen companion app, featuring real-time AI cooking guidance and intelligent meal planning.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
