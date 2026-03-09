@@ -695,8 +695,8 @@ const Hero: React.FC = () => {
               <div className="px-6 space-y-4 flex-1">
                 <div className="relative rounded-3xl overflow-hidden aspect-square bg-gray-900 border-4 border-primary/20 shadow-lg">
                   <img 
-                    src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=800" 
-                    className="w-full h-full object-cover opacity-90"
+                    src="/logo.png" 
+                    className="w-full h-full object-contain p-8"
                     alt="Chef Qailo"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
@@ -772,8 +772,8 @@ const ChefChat: React.FC = () => {
     <div className="w-full bg-white dark:bg-dark-card rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-50 dark:border-white/5 group hover:shadow-primary/5 transition-shadow">
       <div className="bg-primary p-6 flex items-center justify-between text-white">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full bg-white overflow-hidden p-0.5 border-2 border-white/20">
-             <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=200" alt="Chef Avatar" className="w-full h-full object-cover rounded-full" />
+          <div className="w-12 h-12 rounded-full bg-white overflow-hidden p-2 border-2 border-white/20 flex items-center justify-center">
+             <img src="/logo.png" alt="Chef Avatar" className="w-full h-full object-contain" />
           </div>
           <div>
             <h4 className="font-bold text-base">Chef Qailo</h4>
