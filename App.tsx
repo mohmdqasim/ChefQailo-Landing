@@ -537,7 +537,7 @@ const FuturisticModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ i
         
         <div className="relative z-10 p-12 text-center space-y-8">
         <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto shadow-inner border border-primary/20 animate-float overflow-hidden p-4">
-          <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+          <img src="/logo.png" alt="Chef Qailo Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
         </div>
           
           <div className="space-y-4">
@@ -590,7 +590,7 @@ const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void; onGetApp: () =
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl glass rounded-[2rem] px-8 py-4 shadow-xl border border-white/20 dark:border-white/5 animate-fade-in flex items-center justify-between">
       <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+        <img src="/logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
       </div>
 
       <div className="hidden md:flex items-center gap-10">
@@ -688,7 +688,7 @@ const Hero: React.FC = () => {
               
               <div className="px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="h-6 w-auto object-contain" referrerPolicy="no-referrer" />
+                  <img src="/logo.png" alt="Chef Qailo Logo" className="h-6 w-auto object-contain" referrerPolicy="no-referrer" />
                 </div>
               </div>
 
@@ -1357,7 +1357,7 @@ const Footer: React.FC = () => (
       <RevealOnScroll>
         <div className="space-y-6">
           <div className="flex items-center gap-2">
-            <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+            <img src="/logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
             Making premium kitchen expertise accessible to everyone through AI.
