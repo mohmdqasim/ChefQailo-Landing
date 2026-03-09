@@ -23,9 +23,8 @@ const RevealOnScroll: React.FC<{ children: React.ReactNode; delay?: string }> = 
   return (
     <div
       ref={domRef}
-      className={`transition-all duration-1000 ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+      className={`transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
       style={{ transitionDelay: delay }}
     >
       {children}
@@ -94,7 +93,7 @@ const LiveBarChart: React.FC = () => {
     <div className="flex items-end justify-between h-40 w-full px-2">
       {bars.map((h, i) => (
         <div key={i} className="flex flex-col items-center gap-2 group/bar">
-          <div 
+          <div
             className="w-8 bg-primary/20 dark:bg-primary/10 rounded-t-xl relative overflow-hidden transition-all duration-1000"
             style={{ height: `${h}%` }}
           >
@@ -112,12 +111,11 @@ const LiveBarChart: React.FC = () => {
 const FAQItem: React.FC<{ question: string, answer: string, index: number }> = ({ question, answer, index }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={`group transition-all duration-500 rounded-[2rem] border overflow-hidden ${
-      isOpen 
-      ? 'bg-white dark:bg-dark-card border-primary/30 shadow-[0_20px_40px_-15px_rgba(211,96,10,0.1)]' 
-      : 'bg-transparent border-gray-100 dark:border-white/5 hover:border-primary/20 hover:bg-white/50 dark:hover:bg-white/5'
-    }`}>
-      <button 
+    <div className={`group transition-all duration-500 rounded-[2rem] border overflow-hidden ${isOpen
+        ? 'bg-white dark:bg-dark-card border-primary/30 shadow-[0_20px_40px_-15px_rgba(211,96,10,0.1)]'
+        : 'bg-transparent border-gray-100 dark:border-white/5 hover:border-primary/20 hover:bg-white/50 dark:hover:bg-white/5'
+      }`}>
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-8 py-7 flex items-center justify-between text-left group"
       >
@@ -130,7 +128,7 @@ const FAQItem: React.FC<{ question: string, answer: string, index: number }> = (
           </span>
         </div>
         <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-primary text-white rotate-180 shadow-lg shadow-primary/20' : 'bg-gray-50 dark:bg-white/5 text-gray-400'}`}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
         </div>
       </button>
       <div className={`px-8 transition-all duration-500 ease-in-out ${isOpen ? 'max-h-64 opacity-100 pb-8' : 'max-h-0 opacity-0'}`}>
@@ -276,10 +274,10 @@ const PreferencesSection: React.FC = () => {
                     </div>
                   </div>
                   <div className="pt-8">
-                     <p className="text-white/40 text-xs italic mb-4">"Qailo will automatically filter all 5,000+ recipes to match your profile."</p>
-                     <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                       <div className="h-full bg-secondary w-3/4 rounded-full"></div>
-                     </div>
+                    <p className="text-white/40 text-xs italic mb-4">"Qailo will automatically filter all 5,000+ recipes to match your profile."</p>
+                    <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-secondary w-3/4 rounded-full"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -293,7 +291,7 @@ const PreferencesSection: React.FC = () => {
 
 const LanguageSupportSection: React.FC = () => {
   const languages = ["English", "Español", "Français", "Deutsch", "日本語", "한국어", "Italiano", "Português", "中文"];
-  
+
   return (
     <section className="py-24 bg-gray-50 dark:bg-dark-bg/40 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
@@ -322,7 +320,7 @@ const ReferralSection: React.FC = () => {
         <RevealOnScroll>
           <div className="relative p-12 lg:p-20 rounded-[4rem] bg-gray-900 dark:bg-black overflow-hidden group">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-20 -translate-y-1/2 translate-x-1/2 group-hover:opacity-30 transition-opacity"></div>
-            
+
             <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
               <div className="space-y-8">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
@@ -343,7 +341,7 @@ const ReferralSection: React.FC = () => {
                   </button>
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 flex flex-col items-center justify-center text-center">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary text-3xl mb-4 font-display">1</div>
@@ -430,7 +428,7 @@ const HowItWorks: React.FC = () => {
                     <div className={`w-32 h-32 lg:w-48 lg:h-48 rounded-[3rem] bg-white dark:bg-dark-bg shadow-xl flex items-center justify-center ${step.iconColor} relative z-10 transition-all duration-700 group-hover:rotate-[15deg] group-hover:shadow-primary/20`}>
                       <div className="scale-[2.5] lg:scale-[3.5]">{step.icon}</div>
                     </div>
-                    
+
                     {/* Floating Accent Shapes */}
                     <div className={`absolute top-12 left-12 w-6 h-6 rounded-full bg-${step.accent}-500 opacity-20 animate-pulse`}></div>
                     <div className={`absolute bottom-12 right-12 w-10 h-10 rounded-xl border-4 border-${step.accent}-500 opacity-10 rotate-12`}></div>
@@ -439,22 +437,22 @@ const HowItWorks: React.FC = () => {
 
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-8">
-                   <div className="flex items-center gap-4">
-                     <span className="w-12 h-0.5 bg-primary/30"></span>
-                     <span className="text-primary font-display font-bold tracking-widest uppercase text-sm">Stage {idx + 1}</span>
-                   </div>
-                   <h3 className="text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white leading-tight">
-                     {step.title}
-                   </h3>
-                   <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-lg">
-                     {step.desc}
-                   </p>
-                   <div className="pt-4">
-                     <button className="flex items-center gap-3 text-gray-900 dark:text-white font-bold group-hover:text-primary transition-colors">
-                       <span className="text-sm border-b-2 border-primary/20 group-hover:border-primary transition-all pb-1">Learn about this stage</span>
-                       <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                     </button>
-                   </div>
+                  <div className="flex items-center gap-4">
+                    <span className="w-12 h-0.5 bg-primary/30"></span>
+                    <span className="text-primary font-display font-bold tracking-widest uppercase text-sm">Stage {idx + 1}</span>
+                  </div>
+                  <h3 className="text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white leading-tight">
+                    {step.title}
+                  </h3>
+                  <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-lg">
+                    {step.desc}
+                  </p>
+                  <div className="pt-4">
+                    <button className="flex items-center gap-3 text-gray-900 dark:text-white font-bold group-hover:text-primary transition-colors">
+                      <span className="text-sm border-b-2 border-primary/20 group-hover:border-primary transition-all pb-1">Learn about this stage</span>
+                      <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </RevealOnScroll>
@@ -490,7 +488,7 @@ const WeeklyMenuPreview: React.FC = () => {
             </button>
           </RevealOnScroll>
         </div>
-        
+
         <div className="flex gap-6 overflow-x-auto pb-8 no-scrollbar -mx-6 px-6">
           {meals.map((meal, i) => (
             <div key={i} className="flex-shrink-0 w-72 group">
@@ -525,21 +523,21 @@ const FuturisticModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ i
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 animate-fade-in">
-      <div 
+      <div
         className="absolute inset-0 bg-black/60 backdrop-blur-xl transition-opacity duration-500"
         onClick={onClose}
       ></div>
-      
+
       <div className="relative w-full max-w-lg bg-white dark:bg-dark-card rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(211,96,10,0.3)] border border-primary/20 overflow-hidden animate-scale-in">
         {/* Futuristic Background Accents */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/10 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/2"></div>
-        
+
         <div className="relative z-10 p-12 text-center space-y-8">
-        <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto shadow-inner border border-primary/20 animate-float overflow-hidden p-4">
-          <img src="/logo.png" alt="Chef Qailo Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
-        </div>
-          
+          <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto shadow-inner border border-primary/20 animate-float overflow-hidden p-4">
+            <img src="/logo.png" alt="Chef Qailo Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+          </div>
+
           <div className="space-y-4">
             <h3 className="text-3xl lg:text-4xl font-display font-bold text-gray-900 dark:text-white leading-tight">
               Coming <span className="text-primary italic">Soon</span>
@@ -548,25 +546,25 @@ const FuturisticModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ i
               We’re currently building something great. The application will be available soon.
             </p>
           </div>
-          
+
           <div className="pt-4">
-            <button 
+            <button
               onClick={onClose}
               className="w-full py-5 bg-primary text-white rounded-2xl font-bold shadow-xl shadow-primary/30 hover:scale-[1.02] active:scale-95 transition-all"
             >
               Got it, thanks!
             </button>
           </div>
-          
+
           <div className="flex justify-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
             <div className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-pulse delay-150"></div>
             <div className="w-1.5 h-1.5 rounded-full bg-primary/20 animate-pulse delay-300"></div>
           </div>
         </div>
-        
+
         {/* Close Button */}
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-6 right-6 p-3 rounded-full bg-gray-100 dark:bg-white/5 text-gray-400 hover:text-primary transition-colors"
         >
@@ -590,14 +588,17 @@ const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void; onGetApp: () =
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl glass rounded-[2rem] px-8 py-4 shadow-xl border border-white/20 dark:border-white/5 animate-fade-in flex items-center justify-between">
       <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <img src="/logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+        <img src="/logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain group-hover:scale-110 transition-transform duration-300" referrerPolicy="no-referrer" />
+        <span className="text-xl font-display font-bold text-gray-900 dark:text-white tracking-tight group-hover:text-primary transition-colors">
+          Chef <span className="text-primary italic">Qailo</span>
+        </span>
       </div>
 
       <div className="hidden md:flex items-center gap-10">
         {navItems.map((item) => (
-          <a 
-            key={item.label} 
-            href={item.href} 
+          <a
+            key={item.label}
+            href={item.href}
             className="text-sm font-bold text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full tracking-tight"
           >
             {item.label}
@@ -606,19 +607,19 @@ const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void; onGetApp: () =
       </div>
 
       <div className="flex items-center gap-4">
-        <button 
+        <button
           onClick={toggleDark}
           className="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400"
           aria-label="Toggle Dark Mode"
         >
           {isDark ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
           )}
         </button>
 
-        <button 
+        <button
           onClick={onGetApp}
           className="bg-primary text-white px-8 py-3.5 rounded-2xl text-sm font-bold hover:bg-opacity-95 transition-all shadow-lg shadow-primary/30 active:scale-95"
         >
@@ -645,7 +646,7 @@ const Hero: React.FC = () => {
             </span>
             Meet Your New Kitchen Companion
           </div>
-          
+
           <div className="space-y-4">
             <h1 className="text-6xl lg:text-8xl font-display font-bold text-gray-900 dark:text-white leading-[1] tracking-tight">
               Your Personal <br />
@@ -664,11 +665,11 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6">
             <button className="bg-primary text-white px-10 py-5 rounded-2xl text-lg font-bold hover:scale-105 transition-all shadow-xl shadow-primary/40 active:scale-95 flex items-center justify-center gap-2">
               Get Started Free
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
             </button>
             <button className="bg-white dark:bg-dark-card text-gray-900 dark:text-white border-2 border-gray-100 dark:border-white/5 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-gray-50 dark:hover:bg-white/5 transition-all active:scale-95 flex items-center justify-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m7 4 12 8-12 8V4z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m7 4 12 8-12 8V4z" /></svg>
               </div>
               How It Works
             </button>
@@ -681,11 +682,11 @@ const Hero: React.FC = () => {
               <div className="h-10 flex items-center justify-between px-8 pt-2">
                 <span className="text-[10px] font-bold dark:text-white/50">9:41</span>
                 <div className="flex gap-1.5">
-                   <div className="w-3 h-3 rounded-full bg-black/10 dark:bg-white/10"></div>
-                   <div className="w-3 h-3 rounded-full bg-black/10 dark:bg-white/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-black/10 dark:bg-white/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-black/10 dark:bg-white/10"></div>
                 </div>
               </div>
-              
+
               <div className="px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <img src="/logo.png" alt="Chef Qailo Logo" className="h-6 w-auto object-contain" referrerPolicy="no-referrer" />
@@ -693,23 +694,27 @@ const Hero: React.FC = () => {
               </div>
 
               <div className="px-6 space-y-4 flex-1">
-                <div className="relative rounded-3xl overflow-hidden aspect-square bg-gray-900 border-4 border-primary/20 shadow-lg">
-                  <img 
-                    src="/logo.png" 
-                    className="w-full h-full object-contain p-8"
+                <div className="relative rounded-3xl overflow-hidden aspect-square bg-gradient-to-br from-gray-900 to-gray-800 border-4 border-primary/30 shadow-[0_20px_50px_rgba(211,96,10,0.2)]">
+                  <div className="absolute inset-0 bg-primary/5"></div>
+                  <img
+                    src="/logo.png"
+                    className="relative z-10 w-full h-full object-contain p-10 drop-shadow-[0_10px_20px_rgba(211,96,10,0.3)]"
                     alt="Chef Qailo"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-bold text-sm">Chef Qailo</p>
-                    <p className="text-white/60 text-[10px]">AI Personal Assistant</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent z-20"></div>
+                  <div className="absolute bottom-4 left-4 right-4 z-30">
+                    <p className="text-white font-bold text-sm tracking-tight">Chef Qailo</p>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                      <p className="text-white/60 text-[10px] uppercase font-bold tracking-widest">Active Assistant</p>
+                    </div>
                   </div>
                 </div>
                 <div className="p-4 rounded-2xl bg-primary/10 dark:bg-primary/20 space-y-2">
-                    <h4 className="font-bold text-xs text-primary">Chef's Recommendation</h4>
-                    <p className="text-[10px] text-gray-600 dark:text-gray-400 leading-relaxed">
-                      "I noticed you have fresh basil and tomatoes. Shall we make a 15-minute Margherita pasta today?"
-                    </p>
+                  <h4 className="font-bold text-xs text-primary">Chef's Recommendation</h4>
+                  <p className="text-[10px] text-gray-600 dark:text-gray-400 leading-relaxed">
+                    "I noticed you have fresh basil and tomatoes. Shall we make a 15-minute Margherita pasta today?"
+                  </p>
                 </div>
               </div>
             </div>
@@ -726,12 +731,12 @@ const ElegantFeaturedCard: React.FC<FeatureCard & { index: number }> = ({ title,
   <div className={`group relative p-10 rounded-[3rem] bg-white dark:bg-dark-card transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(211,96,10,0.15)] border border-gray-50 dark:border-white/5 overflow-hidden ${index === 1 ? 'lg:translate-y-12' : ''}`}>
     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700"></div>
     <div className="absolute bottom-0 left-0 w-16 h-16 border-2 border-primary/5 rounded-full translate-y-8 -translate-x-8"></div>
-    
+
     <div className="relative z-10">
       <div className="w-20 h-20 mb-10 rounded-[2rem] bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center transition-all duration-500 group-hover:bg-primary group-hover:text-white group-hover:rotate-[10deg] shadow-inner">
         <div className="scale-125">{icon}</div>
       </div>
-      
+
       <div className="space-y-4">
         <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white tracking-tight group-hover:text-primary transition-colors">
           {title}
@@ -772,8 +777,10 @@ const ChefChat: React.FC = () => {
     <div className="w-full bg-white dark:bg-dark-card rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-50 dark:border-white/5 group hover:shadow-primary/5 transition-shadow">
       <div className="bg-primary p-6 flex items-center justify-between text-white">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full bg-white overflow-hidden p-2 border-2 border-white/20 flex items-center justify-center">
-             <img src="/logo.png" alt="Chef Avatar" className="w-full h-full object-contain" />
+          <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-primary to-secondary p-[2px] shadow-lg">
+            <div className="w-full h-full rounded-full bg-white dark:bg-dark-card overflow-hidden p-2 flex items-center justify-center">
+              <img src="/logo.png" alt="Chef Avatar" className="w-full h-full object-contain drop-shadow-sm" />
+            </div>
           </div>
           <div>
             <h4 className="font-bold text-base">Chef Qailo</h4>
@@ -784,15 +791,14 @@ const ChefChat: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <div ref={scrollRef} className="h-[400px] overflow-y-auto p-8 space-y-6 bg-cream/30 dark:bg-dark-bg/30 scroll-smooth">
         {messages.map((m, idx) => (
           <div key={idx} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} animate-scale-in`}>
-            <div className={`max-w-[85%] px-5 py-3 rounded-2xl shadow-sm transition-all hover:scale-[1.01] ${
-              m.role === 'user' 
-              ? 'bg-primary text-white rounded-br-none shadow-primary/20' 
-              : 'bg-white dark:bg-dark-card text-gray-800 dark:text-gray-200 rounded-bl-none border border-gray-100 dark:border-white/10'
-            }`}>
+            <div className={`max-w-[85%] px-5 py-3 rounded-2xl shadow-sm transition-all hover:scale-[1.01] ${m.role === 'user'
+                ? 'bg-primary text-white rounded-br-none shadow-primary/20'
+                : 'bg-white dark:bg-dark-card text-gray-800 dark:text-gray-200 rounded-bl-none border border-gray-100 dark:border-white/10'
+              }`}>
               <p className="text-sm leading-relaxed whitespace-pre-wrap">{m.content}</p>
             </div>
           </div>
@@ -813,12 +819,12 @@ const ChefChat: React.FC = () => {
       <div className="p-6 bg-white dark:bg-dark-card border-t border-gray-50 dark:border-white/5">
         <div className="flex gap-3 items-center">
           <div className="flex-1 relative">
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              placeholder="What's for dinner tonight?" 
+              placeholder="What's for dinner tonight?"
               className="w-full bg-gray-50 dark:bg-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary/10 text-sm transition-all focus:bg-white dark:focus:bg-white/10 border border-transparent focus:border-primary/20 dark:text-white"
             />
           </div>
@@ -836,7 +842,7 @@ const InventorySection: React.FC = () => {
     <section id="inventory" className="py-32 px-6 bg-gray-50 dark:bg-dark-bg/50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          
+
           <div className="space-y-10">
             <RevealOnScroll>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
@@ -879,7 +885,7 @@ const InventorySection: React.FC = () => {
                     <h3 className="font-display font-bold text-xl dark:text-white">My Pantry</h3>
                     <div className="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full">24 Items</div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     {[
                       { name: "Organic Spinach", qty: "200g", status: "Expires in 2 days", color: "text-primary", bg: "bg-primary/5" },
@@ -889,7 +895,7 @@ const InventorySection: React.FC = () => {
                       <div key={item.name} className={`p-5 rounded-[2rem] border border-gray-100 dark:border-white/5 flex items-center justify-between hover:scale-[1.02] transition-transform duration-500 cursor-default ${item.bg}`}>
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 rounded-2xl bg-white dark:bg-dark-card shadow-sm flex items-center justify-center border border-gray-100 dark:border-white/10">
-                             <div className="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/10"></div>
+                            <div className="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/10"></div>
                           </div>
                           <div>
                             <p className="font-bold text-sm text-gray-900 dark:text-white">{item.name}</p>
@@ -932,7 +938,7 @@ const SocialSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          
+
           <div className="relative order-2 lg:order-1">
             <RevealOnScroll delay="0.2s">
               <div className="grid grid-cols-2 gap-4">
@@ -945,7 +951,7 @@ const SocialSection: React.FC = () => {
                   </div>
                 </div>
                 <div className="space-y-4 pt-12">
-                   <div className="relative group rounded-3xl overflow-hidden aspect-square shadow-xl">
+                  <div className="relative group rounded-3xl overflow-hidden aspect-square shadow-xl">
                     <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="Salad" />
                   </div>
                   <div className="relative group rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
@@ -1017,11 +1023,11 @@ const MeetChefSection: React.FC = () => {
 
           <div className="order-1 lg:order-2">
             <RevealOnScroll delay="0.2s">
-               <div className="relative">
-                 <div className="relative z-10 flex flex-col gap-8">
-                    <ChefChat />
-                 </div>
-               </div>
+              <div className="relative">
+                <div className="relative z-10 flex flex-col gap-8">
+                  <ChefChat />
+                </div>
+              </div>
             </RevealOnScroll>
           </div>
         </div>
@@ -1041,7 +1047,7 @@ const ChefFeedback: React.FC = () => {
 
     setLoading(true);
     setAnalysis(null);
-    
+
     const reader = new FileReader();
     reader.onloadend = async () => {
       const base64 = (reader.result as string).split(',')[1];
@@ -1065,7 +1071,7 @@ const ChefFeedback: React.FC = () => {
           <div className="flex gap-4">
             <input type="file" accept="image/*" className="hidden" ref={fileInputRef} onChange={handleFileUpload} />
             <RevealOnScroll delay="0.4s">
-              <button 
+              <button
                 onClick={() => fileInputRef.current?.click()}
                 className="bg-white text-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-opacity-90 hover:scale-105 transition-all active:scale-95 shadow-lg"
               >
@@ -1126,7 +1132,7 @@ const KitchenInsights: React.FC = () => {
                   <p className="text-xs text-gray-400 font-medium">Weekly protein intake (g)</p>
                 </div>
                 <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20v-6M6 20V10M18 20V4" /></svg>
                 </div>
               </div>
               <LiveAreaChart />
@@ -1176,7 +1182,7 @@ const KitchenInsights: React.FC = () => {
           <RevealOnScroll delay="0.3s">
             <div className="p-10 rounded-[3rem] bg-gray-900 dark:bg-black border border-gray-800 transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(211,96,10,0.3)] group h-full relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
-              
+
               <div className="relative z-10 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-8 text-white">
                   <div>
@@ -1184,28 +1190,28 @@ const KitchenInsights: React.FC = () => {
                     <p className="text-xs text-white/40 font-medium">Spend optimization</p>
                   </div>
                   <div className="w-10 h-10 rounded-xl bg-white/10 text-primary flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /><path d="M12 18V6" /></svg>
                   </div>
                 </div>
 
                 <div className="flex-1 flex flex-col justify-center">
-                   <div className="text-center mb-8">
-                     <p className="text-4xl font-display font-bold text-white mb-2">$128.50</p>
-                     <p className="text-xs font-bold text-primary uppercase tracking-widest">Estimated monthly savings</p>
-                   </div>
-                   
-                   <div className="space-y-4">
-                     {[
-                       { label: 'Bulk Optimization', val: '+12%', color: 'text-green-400' },
-                       { label: 'Smart Substitution', val: '+8%', color: 'text-green-400' },
-                       { label: 'Seasonality Factor', val: '+15%', color: 'text-green-400' }
-                     ].map(item => (
-                       <div key={item.label} className="flex items-center justify-between text-xs font-bold">
-                         <span className="text-white/60">{item.label}</span>
-                         <span className={item.color}>{item.val}</span>
-                       </div>
-                     ))}
-                   </div>
+                  <div className="text-center mb-8">
+                    <p className="text-4xl font-display font-bold text-white mb-2">$128.50</p>
+                    <p className="text-xs font-bold text-primary uppercase tracking-widest">Estimated monthly savings</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    {[
+                      { label: 'Bulk Optimization', val: '+12%', color: 'text-green-400' },
+                      { label: 'Smart Substitution', val: '+8%', color: 'text-green-400' },
+                      { label: 'Seasonality Factor', val: '+15%', color: 'text-green-400' }
+                    ].map(item => (
+                      <div key={item.label} className="flex items-center justify-between text-xs font-bold">
+                        <span className="text-white/60">{item.label}</span>
+                        <span className={item.color}>{item.val}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <button className="mt-10 w-full py-4 bg-primary text-white rounded-2xl font-bold hover:bg-opacity-90 transition-all">
@@ -1247,7 +1253,7 @@ const FAQSection: React.FC = () => {
               <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
                 Everything you need to know about the future of your kitchen. Can't find the answer? <span className="text-primary cursor-pointer hover:underline">Contact our support.</span>
               </p>
-              
+
               <div className="hidden lg:block pt-12">
                 <div className="w-20 h-20 rounded-[2rem] bg-cream dark:bg-dark-card border border-gray-100 dark:border-white/5 flex items-center justify-center text-primary rotate-[-10deg]">
                   <ICONS.ChefHat />
@@ -1301,12 +1307,11 @@ const Pricing: React.FC = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {plans.map((plan, idx) => (
             <RevealOnScroll key={plan.name} delay={`${idx * 0.1}s`}>
-              <div className={`group h-full relative p-12 rounded-[4rem] transition-all duration-700 flex flex-col ${
-                plan.isPopular 
-                ? 'bg-white dark:bg-dark-card border-2 border-primary shadow-[0_40px_100px_-20px_rgba(211,96,10,0.15)] scale-[1.05] z-10' 
-                : 'bg-white/50 dark:bg-dark-card/50 backdrop-blur-sm border border-gray-100 dark:border-white/5 hover:bg-white dark:hover:bg-dark-card hover:scale-[1.02] hover:shadow-2xl'
-              }`}>
-                
+              <div className={`group h-full relative p-12 rounded-[4rem] transition-all duration-700 flex flex-col ${plan.isPopular
+                  ? 'bg-white dark:bg-dark-card border-2 border-primary shadow-[0_40px_100px_-20px_rgba(211,96,10,0.15)] scale-[1.05] z-10'
+                  : 'bg-white/50 dark:bg-dark-card/50 backdrop-blur-sm border border-gray-100 dark:border-white/5 hover:bg-white dark:hover:bg-dark-card hover:scale-[1.02] hover:shadow-2xl'
+                }`}>
+
                 {plan.isPopular && (
                   <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-8 py-2.5 rounded-full shadow-lg flex items-center gap-2 group-hover:scale-110 transition-transform">
                     <ICONS.Zap /> Chef's Recommendation
@@ -1334,13 +1339,12 @@ const Pricing: React.FC = () => {
                   ))}
                 </div>
 
-                <button className={`w-full py-6 rounded-[2.5rem] font-bold transition-all duration-500 active:scale-95 text-base flex items-center justify-center gap-2 group/btn ${
-                  plan.isPopular 
-                  ? 'bg-primary text-white hover:bg-opacity-95 shadow-xl shadow-primary/30' 
-                  : 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:scale-[1.05]'
-                }`}>
+                <button className={`w-full py-6 rounded-[2.5rem] font-bold transition-all duration-500 active:scale-95 text-base flex items-center justify-center gap-2 group/btn ${plan.isPopular
+                    ? 'bg-primary text-white hover:bg-opacity-95 shadow-xl shadow-primary/30'
+                    : 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:scale-[1.05]'
+                  }`}>
                   Select {plan.name}
-                  <svg className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  <svg className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </button>
               </div>
             </RevealOnScroll>
@@ -1387,13 +1391,13 @@ export default function App() {
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white font-sans overflow-x-hidden transition-colors duration-300">
       <Navbar isDark={isDark} toggleDark={toggleDark} onGetApp={() => setIsModalOpen(true)} />
-      
+
       <main>
         <Hero />
 
         <section id="features" className="py-32 px-6 relative">
           <div className="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
-          
+
           <div className="max-w-7xl mx-auto relative">
             <div className="max-w-3xl mb-24">
               <RevealOnScroll>
@@ -1450,20 +1454,20 @@ export default function App() {
         <ReferralSection />
 
         <section className="py-32 px-6 text-center max-w-4xl mx-auto space-y-8">
-           <RevealOnScroll>
-             <h2 className="text-4xl lg:text-6xl font-display font-bold dark:text-white">Ready to Cook Smarter?</h2>
-             <p className="text-xl text-gray-600 dark:text-gray-400 mt-4">Join thousands of home chefs today.</p>
-           </RevealOnScroll>
-           <RevealOnScroll delay="0.3s">
-             <div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
-               <button 
-                 onClick={() => setIsModalOpen(true)}
-                 className="bg-primary text-white px-10 py-5 rounded-2xl text-xl font-bold hover:scale-105 active:scale-95 shadow-xl shadow-primary/20"
-               >
-                 Download on App Store
-               </button>
-             </div>
-           </RevealOnScroll>
+          <RevealOnScroll>
+            <h2 className="text-4xl lg:text-6xl font-display font-bold dark:text-white">Ready to Cook Smarter?</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 mt-4">Join thousands of home chefs today.</p>
+          </RevealOnScroll>
+          <RevealOnScroll delay="0.3s">
+            <div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-primary text-white px-10 py-5 rounded-2xl text-xl font-bold hover:scale-105 active:scale-95 shadow-xl shadow-primary/20"
+              >
+                Download on App Store
+              </button>
+            </div>
+          </RevealOnScroll>
         </section>
       </main>
 
