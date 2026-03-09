@@ -216,6 +216,156 @@ const WhyChooseQailo: React.FC = () => {
   );
 };
 
+const PreferencesSection: React.FC = () => {
+  const dietaryItems = [
+    { name: "Vegan", icon: "🌱" },
+    { name: "Keto", icon: "🥓" },
+    { name: "Gluten-Free", icon: "🌾" },
+    { name: "Nut-Free", icon: "🚫" },
+    { name: "Halal", icon: "🌙" },
+    { name: "Low Carb", icon: "🥦" },
+    { name: "Dairy-Free", icon: "🥛" },
+    { name: "Pescatarian", icon: "🐟" }
+  ];
+
+  return (
+    <section className="py-32 px-6 bg-white dark:bg-dark-bg overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <RevealOnScroll>
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-widest border border-secondary/20">
+                Your Health, Your Way
+              </div>
+              <h2 className="text-4xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white leading-tight">
+                No compromise on <br /><span className="text-secondary italic">Preferences</span>.
+              </h2>
+              <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
+                Whether it's an allergy, a religious restriction, or a lifestyle choice, Qailo understands. Our AI adapts every recipe in real-time to fit your unique nutritional blueprint.
+              </p>
+              <div className="pt-6 grid grid-cols-2 gap-4">
+                {dietaryItems.map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 group hover:border-secondary transition-colors">
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="font-bold text-gray-700 dark:text-gray-300">{item.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay="0.3s">
+            <div className="relative">
+              <div className="absolute inset-0 bg-secondary/20 blur-[100px] rounded-full -z-10 animate-pulse-slow"></div>
+              <div className="p-10 rounded-[4rem] bg-gray-900 shadow-2xl border border-gray-800">
+                <div className="space-y-6">
+                  <div className="flex justify-between items-center text-white pb-6 border-b border-white/10">
+                    <h3 className="font-display font-bold text-xl">Dietary Profile</h3>
+                    <button className="text-secondary text-sm font-bold">Edit</button>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="p-5 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-between">
+                      <span className="text-white font-medium">Primary Restriction</span>
+                      <span className="px-4 py-1.5 rounded-full bg-secondary/20 text-secondary text-xs font-bold uppercase">Gluten-Free</span>
+                    </div>
+                    <div className="p-5 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-between">
+                      <span className="text-white font-medium">Allergies</span>
+                      <div className="flex gap-2">
+                        <span className="px-4 py-1.5 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-tight">Peanuts</span>
+                        <span className="px-4 py-1.5 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-tight">Shellfish</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-8">
+                     <p className="text-white/40 text-xs italic mb-4">"Qailo will automatically filter all 5,000+ recipes to match your profile."</p>
+                     <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                       <div className="h-full bg-secondary w-3/4 rounded-full"></div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const LanguageSupportSection: React.FC = () => {
+  const languages = ["English", "Español", "Français", "Deutsch", "日本語", "한국어", "Italiano", "Português", "中文"];
+  
+  return (
+    <section className="py-24 bg-gray-50 dark:bg-dark-bg/40 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <RevealOnScroll>
+          <div className="mb-12">
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4 dark:text-white">A Global <span className="text-primary italic">Flavor</span> Palette</h2>
+            <p className="text-gray-500 dark:text-gray-400 font-medium">Chef Qailo speaks the world's most popular languages, fluently.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-8">
+            {languages.map((lang, i) => (
+              <span key={lang} className="px-6 py-3 rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-white/5 shadow-sm font-bold text-gray-700 dark:text-gray-300 hover:text-primary hover:border-primary transition-all duration-300 cursor-default">
+                {lang}
+              </span>
+            ))}
+          </div>
+        </RevealOnScroll>
+      </div>
+    </section>
+  );
+};
+
+const ReferralSection: React.FC = () => {
+  return (
+    <section className="py-32 px-6 bg-white dark:bg-dark-bg">
+      <div className="max-w-7xl mx-auto">
+        <RevealOnScroll>
+          <div className="relative p-12 lg:p-20 rounded-[4rem] bg-gray-900 dark:bg-black overflow-hidden group">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-20 -translate-y-1/2 translate-x-1/2 group-hover:opacity-30 transition-opacity"></div>
+            
+            <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+              <div className="space-y-8">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
+                  Referal Program
+                </div>
+                <h2 className="text-4xl lg:text-6xl font-display font-bold text-white leading-tight">
+                  Share the <span className="text-primary italic">Flavor</span>, <br />Earn the Rewards.
+                </h2>
+                <p className="text-xl text-white/50 leading-relaxed font-medium">
+                  Invite your friends to Chef Qailo and get 1 month of Pro membership free for every referral. They get a special welcome gift, too!
+                </p>
+                <div className="flex gap-4">
+                  <button className="bg-primary text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all">
+                    Invite Friends
+                  </button>
+                  <button className="bg-white/10 text-white px-8 py-4 rounded-2xl font-bold border border-white/10 hover:bg-white/20 transition-all">
+                    How it works
+                  </button>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 flex flex-col items-center justify-center text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary text-3xl mb-4 font-display">1</div>
+                  <h4 className="text-white font-bold">Share Link</h4>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 flex flex-col items-center justify-center text-center translate-y-8">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary text-3xl mb-4 font-display">2</div>
+                  <h4 className="text-white font-bold">They Join</h4>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 flex flex-col items-center justify-center text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary text-3xl mb-4 font-display">3</div>
+                  <h4 className="text-white font-bold">Get Pro</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </RevealOnScroll>
+      </div>
+    </section>
+  );
+};
+
 const HowItWorks: React.FC = () => {
   const steps = [
     {
@@ -321,7 +471,7 @@ const WeeklyMenuPreview: React.FC = () => {
     { title: "Miso Glazed Salmon", time: "25 min", cal: "450", img: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=400" },
     { title: "Quinoa Buddha Bowl", time: "15 min", cal: "380", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400" },
     { title: "Lemon Garlic Chicken", time: "30 min", cal: "520", img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&q=80&w=400" },
-    { title: "Truffle Pasta", time: "20 min", cal: "610", img: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=400" },
+    { title: "Truffle Pasta", time: "20 min", cal: "610", img: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&q=80&w=400" },
     { title: "Mediterranean Salad", time: "10 min", cal: "310", img: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=400" },
     { title: "Seafood Paella", time: "45 min", cal: "580", img: "https://images.unsplash.com/photo-1534080564607-c9295478493b?auto=format&fit=crop&q=80&w=400" },
     { title: "Green Pesto Pasta", time: "15 min", cal: "420", img: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&q=80&w=400" }
@@ -368,9 +518,68 @@ const WeeklyMenuPreview: React.FC = () => {
   );
 };
 
+// --- Futuristic Modal Component ---
+
+const FuturisticModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 animate-fade-in">
+      <div 
+        className="absolute inset-0 bg-black/60 backdrop-blur-xl transition-opacity duration-500"
+        onClick={onClose}
+      ></div>
+      
+      <div className="relative w-full max-w-lg bg-white dark:bg-dark-card rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(211,96,10,0.3)] border border-primary/20 overflow-hidden animate-scale-in">
+        {/* Futuristic Background Accents */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/10 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div className="relative z-10 p-12 text-center space-y-8">
+        <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto shadow-inner border border-primary/20 animate-float overflow-hidden p-4">
+          <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+        </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-3xl lg:text-4xl font-display font-bold text-gray-900 dark:text-white leading-tight">
+              Coming <span className="text-primary italic">Soon</span>
+            </h3>
+            <p className="text-lg text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
+              We’re currently building something great. The application will be available soon.
+            </p>
+          </div>
+          
+          <div className="pt-4">
+            <button 
+              onClick={onClose}
+              className="w-full py-5 bg-primary text-white rounded-2xl font-bold shadow-xl shadow-primary/30 hover:scale-[1.02] active:scale-95 transition-all"
+            >
+              Got it, thanks!
+            </button>
+          </div>
+          
+          <div className="flex justify-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-pulse delay-150"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-primary/20 animate-pulse delay-300"></div>
+          </div>
+        </div>
+        
+        {/* Close Button */}
+        <button 
+          onClick={onClose}
+          className="absolute top-6 right-6 p-3 rounded-full bg-gray-100 dark:bg-white/5 text-gray-400 hover:text-primary transition-colors"
+        >
+          <ICONS.X />
+        </button>
+      </div>
+    </div>
+  );
+};
+
 // --- Main Components ---
 
-const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void }> = ({ isDark, toggleDark }) => {
+const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void; onGetApp: () => void }> = ({ isDark, toggleDark, onGetApp }) => {
   const navItems: NavItem[] = [
     { label: 'Features', href: '#features' },
     { label: 'How it Works', href: '#how-it-works' },
@@ -380,11 +589,8 @@ const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void }> = ({ isDark,
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl glass rounded-[2rem] px-8 py-4 shadow-xl border border-white/20 dark:border-white/5 animate-fade-in flex items-center justify-between">
-      <div className="flex items-center gap-3 cursor-pointer group">
-        <div className="bg-primary p-2.5 rounded-xl text-white group-hover:rotate-12 transition-transform shadow-lg shadow-primary/30">
-          <ICONS.ChefHat />
-        </div>
-        <span className="text-2xl font-display font-bold text-primary tracking-tight">Qailo</span>
+      <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
       </div>
 
       <div className="hidden md:flex items-center gap-10">
@@ -412,7 +618,10 @@ const Navbar: React.FC<{ isDark: boolean; toggleDark: () => void }> = ({ isDark,
           )}
         </button>
 
-        <button className="bg-primary text-white px-8 py-3.5 rounded-2xl text-sm font-bold hover:bg-opacity-95 transition-all shadow-lg shadow-primary/30 active:scale-95">
+        <button 
+          onClick={onGetApp}
+          className="bg-primary text-white px-8 py-3.5 rounded-2xl text-sm font-bold hover:bg-opacity-95 transition-all shadow-lg shadow-primary/30 active:scale-95"
+        >
           Get App
         </button>
       </div>
@@ -479,10 +688,7 @@ const Hero: React.FC = () => {
               
               <div className="px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
-                    <ICONS.ChefHat />
-                  </div>
-                  <span className="font-bold text-sm tracking-tight dark:text-white">Qailo</span>
+                  <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="h-6 w-auto object-contain" referrerPolicy="no-referrer" />
                 </div>
               </div>
 
@@ -1151,10 +1357,7 @@ const Footer: React.FC = () => (
       <RevealOnScroll>
         <div className="space-y-6">
           <div className="flex items-center gap-2">
-            <div className="bg-primary p-2 rounded-lg text-white">
-              <ICONS.ChefHat />
-            </div>
-            <span className="text-2xl font-display font-bold text-primary">Chef Qailo</span>
+            <img src="/Chef%20Qailo%20logo.png" alt="Chef Qailo Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
             Making premium kitchen expertise accessible to everyone through AI.
@@ -1170,6 +1373,7 @@ const Footer: React.FC = () => (
 
 export default function App() {
   const [isDark, setIsDark] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleDark = () => {
     setIsDark(!isDark);
@@ -1182,7 +1386,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white font-sans overflow-x-hidden transition-colors duration-300">
-      <Navbar isDark={isDark} toggleDark={toggleDark} />
+      <Navbar isDark={isDark} toggleDark={toggleDark} onGetApp={() => setIsModalOpen(true)} />
       
       <main>
         <Hero />
@@ -1221,6 +1425,8 @@ export default function App() {
 
         <WhyChooseQailo />
 
+        <PreferencesSection />
+
         <HowItWorks />
 
         <MeetChefSection />
@@ -1233,11 +1439,15 @@ export default function App() {
 
         <KitchenInsights />
 
+        <LanguageSupportSection />
+
         <SocialSection />
 
         <FAQSection />
 
         <Pricing />
+
+        <ReferralSection />
 
         <section className="py-32 px-6 text-center max-w-4xl mx-auto space-y-8">
            <RevealOnScroll>
@@ -1246,7 +1456,10 @@ export default function App() {
            </RevealOnScroll>
            <RevealOnScroll delay="0.3s">
              <div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
-               <button className="bg-primary text-white px-10 py-5 rounded-2xl text-xl font-bold hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
+               <button 
+                 onClick={() => setIsModalOpen(true)}
+                 className="bg-primary text-white px-10 py-5 rounded-2xl text-xl font-bold hover:scale-105 active:scale-95 shadow-xl shadow-primary/20"
+               >
                  Download on App Store
                </button>
              </div>
@@ -1255,6 +1468,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <FuturisticModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
